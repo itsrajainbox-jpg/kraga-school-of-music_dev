@@ -1,5 +1,6 @@
-// app/page.tsx or components/PricingSection.tsx
-import React from "react";
+"use client";
+
+import { useState, useEffect } from "react";
 import {
   BookOpen,
   CalendarDays,
@@ -53,10 +54,6 @@ const pricingPlans = [
     badge: "",
     prices: [
       {
-        duration: "30 Minute Private 1:1 Lessons",
-        amount: "$240 USD",
-      },
-      {
         duration: "60 Minute Private 1:1 Lessons",
         amount: "$360 USD",
       },
@@ -75,10 +72,6 @@ const pricingPlans = [
     title: "48 Session Program",
     badge: "BEST VALUE",
     prices: [
-      {
-        duration: "30 Minute Private 1:1 Lessons",
-        amount: "$450 USD",
-      },
       {
         duration: "60 Minute Private 1:1 Lessons",
         amount: "$690 USD",
@@ -136,6 +129,34 @@ const pricingPlans = [
 
 
 export default function PricingPage() {
+
+  const [userRegion, setUserRegion] = useState<"India" | "International">(
+  "International"
+);
+
+useEffect(() => {
+  const detectCountry = async () => {
+    try {
+      const res = await fetch("https://ipapi.co/json/");
+      const data = await res.json();
+
+      if (data.country_code === "IN") {
+        setUserRegion("India");
+      } else {
+        setUserRegion("International");
+      }
+    } catch (error) {
+      console.error("Location detection failed", error);
+      setUserRegion("International");
+    }
+  };
+
+  detectCountry();
+}, []);
+
+const visiblePlans = pricingPlans.filter(
+  (plan) => plan.region === userRegion
+);
   return (
     <main className="bg-[#faf8f4] py-16 md:py-24">
       <section className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -184,8 +205,8 @@ export default function PricingPage() {
         </div>
 
        {/* 1 x 4 Pricing Cards */}
-        <div className="mt-16 grid gap-6 xl:grid-cols-4">
-          {pricingPlans.map((plan, index) => {
+        <div className="mt-16 grid gap-6 xl:grid-cols-2">
+          {visiblePlans.map((plan, index) => {
             const Icon = plan.icon;
 
             return (

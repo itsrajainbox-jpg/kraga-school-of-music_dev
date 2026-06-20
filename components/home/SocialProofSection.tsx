@@ -12,7 +12,7 @@ import {
   Smile,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import Kids from "@/public/WhoItFor/Kids.png";
+import Kids from "@/public/WhoItFor/Kids.jpg";
 import Professional from "@/public/WhoItFor/Professional.png";
 import GradeExams from "@/public/WhoItFor/GradeExams.png";
 import Image from "next/image";

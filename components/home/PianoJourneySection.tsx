@@ -13,7 +13,7 @@ import {
 import ReactCountryFlag from "react-country-flag";
 import Link from "next/link";
 import BookFreeTrial from "@/public/HowItWork/BookFreeTrial.png";
-import MeetYourTeacher from "@/public/HowItWork/MeetStaff.png";
+import MeetYourTeacher from "@/public/HowItWork/MeetStaff2.jpg";
 import StartPianoJourney from "@/public/HowItWork/StartJourney.png";
 import { motion } from "framer-motion";
 
