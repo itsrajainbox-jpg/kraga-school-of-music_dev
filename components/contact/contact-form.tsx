@@ -52,20 +52,22 @@ export function ContactForm() {
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await fetch("/api/Contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbz5Gl-qqy7dPOrqqSXNSJIg1QfrU8sPdXAwJXxUk54KLjZ1YlzcwGRhLNjLVn7hbl5l/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+
+          body: JSON.stringify({
+            ...formData,
+          }),
         },
-        body: JSON.stringify({
-          ...formData,
-        }),
-      });
+      );
     } catch (error) {
       console.error("Booking error:", error);
     } finally {
       setLoading(false);
-      setIsSubmitted(true)
+      setIsSubmitted(true);
     }
   };
 
@@ -244,7 +246,7 @@ export function ContactForm() {
               }
             >
               <Send className="mr-2 h-4 w-4" />
-              {loading? "Sending...." : "Send Message"}
+              {loading ? "Sending...." : "Send Message"}
             </Button>
           </motion.div>
 

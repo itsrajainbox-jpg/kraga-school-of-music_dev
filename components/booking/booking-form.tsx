@@ -152,7 +152,7 @@ export function BookingForm() {
 
       const [time, modifier] = selectedTime.split(" ");
       let [hours, minutes] = time.split(":").map(Number);
- 
+
       if (modifier === "PM" && hours !== 12) hours += 12;
       if (modifier === "AM" && hours === 12) hours = 0;
 
@@ -172,28 +172,30 @@ export function BookingForm() {
         timeStyle: "short",
       }).format(bookingDate);
 
-      const response = await fetch("/api/bookings", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbz94fKZilyVvzXrss7xFN6rS9-KNMPTbZzO7BnZ0I-MDDHjY1a3P5NO7NkZSKBpJs19/exec",
+        {
+         method: "POST",
+          mode: "no-cors",
+          
+          body: JSON.stringify({
+            ...formData,
+            studentTimezone: ipTimezone,
+            ipTimezone,
+            vpnDetected,
+            teacherTimezone,
+            bookingUTC: utcDate,
+            studentDateTime,
+            teacherDateTime,
+          }),
         },
-        body: JSON.stringify({
-          ...formData,
-          studentTimezone: ipTimezone,
-          ipTimezone,
-          vpnDetected,
-          teacherTimezone,
-          bookingUTC: utcDate,
-          studentDateTime,
-          teacherDateTime,
-        }),
-      });
+      );
 
-      const data = await response.json();
+      // const data = await response.json();
 
-      if (!data.success) {
-        throw new Error("Booking failed");
-      }
+      // if (!data.success) {
+      //   throw new Error("Booking failed");
+      // }
 
       setIsSubmitted(true);
     } catch (error) {
