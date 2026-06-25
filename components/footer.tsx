@@ -11,7 +11,7 @@ import {
   Youtube,
   Twitter,
   Piano,
-  Facebook
+  Facebook,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -30,8 +30,16 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Instagram, href: "https://www.instagram.com/kraga.musicschool", label: "Instagram" },
-  { icon: Facebook, href: "https://www.facebook.com/people/Kraga-School-Of-Music/61571828266825/", label: "YouTube" },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/kraga.musicschool",
+    label: "Instagram",
+  },
+  {
+    icon: Facebook,
+    href: "https://www.facebook.com/people/Kraga-School-Of-Music/61571828266825/",
+    label: "YouTube",
+  },
   // { icon: Twitter, href: "#", label: "Twitter" },
 ];
 
@@ -132,7 +140,9 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:lessons@pianomaestro.com"
+                  href="mailto:info@kragaschoolofmusic.com"
+                  target="_self"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-3 text-md text-muted-foreground hover:text-[#f3b63c] transition-colors group"
                 >
                   <div className="w-8 h-8 glass-card rounded-full flex items-center justify-center group-hover:bg-[#f3b63c]/10 transition-colors">
@@ -143,7 +153,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+1234567890"
+                   href="tel: +918807838099"
                   className="flex items-center gap-3 text-md text-muted-foreground hover:text-[#f3b63c] transition-colors group"
                 >
                   <div className="w-8 h-8 glass-card rounded-full flex items-center justify-center group-hover:bg-[#f3b63c]/10 transition-colors">
@@ -172,13 +182,13 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-8">
             <Link
-              href="#"
+              href="/privacy"
               className="text-sm text-muted-foreground hover:text-[#f3b63c] transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              href="#"
+              href="/terms"
               className="text-sm text-muted-foreground hover:text-[#f3b63c] transition-colors"
             >
               Terms of Service

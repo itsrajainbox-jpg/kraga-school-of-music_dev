@@ -45,7 +45,7 @@ export function PianoJourneySection() {
       title: "Meet Your Teacher",
       image: MeetYourTeacher,
       description:
-        "Your first lesson is relaxed and conversational. Raja assesses your level, understands your goals, and teaches you something real.",
+        "Your first lesson is relaxed and conversational. Your teacher assesses your level, understands your goals, and teaches you something real.",
       badge: "Personal. Friendly. Focused on you.",
       icon: User,
     },

@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     "piano instructor",
     "learn piano",
   ],
+  icons: {
+    icon: "https://kragaschoolofmusic.com/images/Logo.png",
+    shortcut: "https://kragaschoolofmusic.com/images/Logo.png",
+    apple: "https://kragaschoolofmusic.com/images/Logo.png",
+  },
 };
 
 export default function RootLayout({

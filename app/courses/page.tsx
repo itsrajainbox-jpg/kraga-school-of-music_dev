@@ -61,8 +61,9 @@ const plans = [
       "https://i.pinimg.com/1200x/a0/74/dd/a074dd1489f994047b661a09c09caa5e.jpg",
     learn: "Hand coordination, chords, scales, arpeggios, music theory & more",
     format: "Live 1:1, 30 or 60 minutes, weekly",
-    border: "border-[#f3b63c]",
-    badge: "MOST POPULAR",
+    border: "border-transparent",
+    // border: "border-[#f3b63c]",
+    badge: null,
   },
   {
     number: 3,

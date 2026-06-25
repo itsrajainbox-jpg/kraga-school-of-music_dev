@@ -71,9 +71,9 @@ export function HeroSection() {
                 Book Your Free Trial Class →
               </Link>
 
-              <button className="rounded-xl border border-[#f3b63c] px-6 sm:px-8 py-3 sm:py-4 font-semibold text-white transition hover:bg-white/10">
+              <Link href="/courses" className="rounded-xl border border-[#f3b63c] px-6 sm:px-8 py-3 sm:py-4 font-semibold text-white transition hover:bg-white/10">
                 Explore Courses
-              </button>
+              </Link>
             </div>
 
             {/* Students */}

@@ -59,11 +59,15 @@ export function BookingForm() {
       setTimezone(browserTimezone);
 
       try {
-        const response = await fetch("https://ipapi.co/json/");
+        const response = await fetch("https://free.freeipapi.com/api/json");
 
         const data = await response.json();
 
-        const detectedIpTimezone = data.timezone;
+        console.log(data, "booking resoponse");
+
+        const detectedIpTimezone =
+          data.timeZones?.[0] ||
+          Intl.DateTimeFormat().resolvedOptions().timeZone;
 
         setIpTimezone(detectedIpTimezone);
 
@@ -175,9 +179,9 @@ export function BookingForm() {
       const response = await fetch(
         "https://script.google.com/macros/s/AKfycbz94fKZilyVvzXrss7xFN6rS9-KNMPTbZzO7BnZ0I-MDDHjY1a3P5NO7NkZSKBpJs19/exec",
         {
-         method: "POST",
+          method: "POST",
           mode: "no-cors",
-          
+
           body: JSON.stringify({
             ...formData,
             studentTimezone: ipTimezone,

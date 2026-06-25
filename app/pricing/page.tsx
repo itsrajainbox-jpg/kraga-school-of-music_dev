@@ -19,7 +19,8 @@ import {
   Headphones,
   Award,
   Shield,
-  Sparkles,MapPin,
+  Sparkles,
+  MapPin,
   CheckCircle2,
 } from "lucide-react";
 import Link from "next/link";
@@ -126,42 +127,36 @@ const pricingPlans = [
   },
 ];
 
-
-
 export default function PricingPage() {
-
   const [userRegion, setUserRegion] = useState<"India" | "International">(
-  "International"
-);
+    "International",
+  );
 
-useEffect(() => {
-  const detectCountry = async () => {
-    try {
-      const res = await fetch("https://ipapi.co/json/");
-      const data = await res.json();
+  useEffect(() => {
+    const detectCountry = async () => {
+      try {
+        const res = await fetch("https://free.freeipapi.com/api/json");
 
-      if (data.country_code === "IN") {
-        setUserRegion("India");
-      } else {
+        if (!res.ok) throw new Error("Failed to fetch");
+
+        const data = await res.json();
+
+        setUserRegion(data.countryCode === "IN" ? "India" : "International");
+      } catch (error) {
+        console.error("Location detection failed", error);
         setUserRegion("International");
       }
-    } catch (error) {
-      console.error("Location detection failed", error);
-      setUserRegion("International");
-    }
-  };
+    };
 
-  detectCountry();
-}, []);
+    detectCountry();
+  }, []);
 
-const visiblePlans = pricingPlans.filter(
-  (plan) => plan.region === userRegion
-);
+  const visiblePlans = pricingPlans.filter(
+    (plan) => plan.region === userRegion,
+  );
   return (
     <main className="bg-[#faf8f4] py-16 md:py-24">
       <section className="container mx-auto px-4 sm:px-6 lg:px-8">
-  
-
         <div className="text-center">
           <div className="mx-auto inline-flex items-center gap-4 text-[15px] font-semibold tracking-[0.24em] text-[#f3b63c]">
             <span className="h-px w-10 bg-[#f3b63c]" />
@@ -204,7 +199,7 @@ const visiblePlans = pricingPlans.filter(
           ))}
         </div>
 
-       {/* 1 x 4 Pricing Cards */}
+        {/* 1 x 4 Pricing Cards */}
         <div className="mt-16 grid gap-6 xl:grid-cols-2">
           {visiblePlans.map((plan, index) => {
             const Icon = plan.icon;
@@ -341,7 +336,10 @@ const visiblePlans = pricingPlans.filter(
               </div>
             </div>
 
-            <Link href="/book" className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-[#102246] px-6 py-4 text-[17px] font-semibold text-[#f3b63c] shadow-[0_8px_20px_rgba(18,34,65,0.18)]">
+            <Link
+              href="/book"
+              className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-[#102246] px-6 py-4 text-[17px] font-semibold text-[#f3b63c] shadow-[0_8px_20px_rgba(18,34,65,0.18)]"
+            >
               Book Your Free Trial <ArrowRight className="h-5 w-5" />
             </Link>
 
@@ -353,7 +351,8 @@ const visiblePlans = pricingPlans.filter(
         </div>
 
         <div className="mx-auto mt-4 max-w-3xl rounded-full border border-[#eadfce] bg-white/80 px-5 py-3 text-center text-[14px] text-[#566078] shadow-sm">
-          <span className="text-[#f3b63c]">▣</span> Free trial class available before enrollment
+          <span className="text-[#f3b63c]">▣</span> Free trial class available
+          before enrollment
         </div>
       </section>
     </main>
