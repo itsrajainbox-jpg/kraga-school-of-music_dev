@@ -7,23 +7,23 @@ import {
   User,
   Music,
   Star,
+  Music4,
   Globe,
   ChartNoAxesCombined,
 } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
 import Link from "next/link";
-import BookFreeTrial from "@/public/HowItWork/BookFreeTrial.png";
-import MeetYourTeacher from "@/public/HowItWork/MeetStaff2.jpg";
-import StartPianoJourney from "@/public/HowItWork/StartJourney.png";
+import BookFreeTrial from "@/public/HowItWork/BookFreeTrial.webp";
+import MeetYourTeacher from "@/public/HowItWork/MeetStaff2.webp";
+import StartPianoJourney from "@/public/HowItWork/StartJourney.webp";
 import { motion } from "framer-motion";
 
 import Test1 from "@/public/HowItWork/Test1.png";
 import Test2 from "@/public/HowItWork/Test2.jpeg";
 import Test3 from "@/public/HowItWork/Test3.jpeg";
-import Test6 from "@/public/HowItWork/Test6.png"
-import Test4 from "@/public/HowItWork/Test4.jpg"
-import Test5 from "@/public/HowItWork/Test5.jpg"
-
+import Test6 from "@/public/HowItWork/Test6.png";
+import Test4 from "@/public/HowItWork/Test4.jpg";
+import Test5 from "@/public/HowItWork/Test5.jpg";
 
 export function PianoJourneySection() {
   const steps = [
@@ -70,58 +70,73 @@ export function PianoJourneySection() {
 
   const testimonials = [
     {
-      name: "Priya Iyer",
-      role: "Parent of Aarav Iyer",
-      country: "Chennai, India",
-      image: Test1,
+      name: "Kritika Gupta",
+      country: "USA",
+      code: "US",
       review:
-        "My son passed Trinity Grade 3 with Merit in just 8 months! The teaching style and patience are amazing.",
-      code: "IN",
+        "Our teacher takes every step to make sure concepts are fully understood. He encourages questions, is incredibly patient, and always willing to help.",
     },
     {
-      name: "James Wilson",
-      role: "Adult Learner",
-      country: "London, UK",
-      image: Test2,
+      name: "Harsimranjeet Kaur",
+      country: "USA",
+      code: "US",
       review:
-        "Flexible timing and structured lessons helped me learn piano while working full-time.",
-      code: "GB",
+        "The teacher has been very patient and genuinely motivates the piano learning journey.",
     },
     {
-      name: "Ananya Sharma",
-      role: "Trinity Grade 8 Student",
-      country: "Dubai, UAE",
-      image: Test3,
+      name: "Sameetha Ajanthan",
+      country: "USA",
+      code: "US",
       review:
-        "I cleared Trinity Grade 8 with Distinction. The feedback and guidance were exceptional.",
-      code: "AE",
+        "The teacher understands when a student is getting overwhelmed and adapts the style quickly. Great video and audio quality — my child connects really well.",
     },
     {
-      name: "Sophia Brown",
-      role: "Parent of Mathew Brown",
-      country: "Sydney, Australia",
-      image: Test6,
+      name: "Yasaswi Vadlamudi",
+      country: "USA",
+      code: "US",
       review:
-        "The online classes are engaging and well-structured. My Son enjoys every lesson and has improved tremendously.",
+        "Our teacher is excellent — my child enjoys every lesson and has been making great progress.",
+    },
+    {
+      name: "Rasmi N",
+      country: "USA",
+      code: "US",
+      review:
+        "My child has made excellent progress and we're very happy to continue the lessons.",
+    },
+    {
+      name: "Nikhil Sanjay Singh",
+      country: "USA",
+      code: "US",
+      review:
+        "I've been learning piano for over a year. The teaching is structured, precise, and adapts to your individual style. The patience and passion for music make every lesson inspiring.",
+    },
+    {
+      name: "Saroj Wadhwa",
+      country: "Australia",
       code: "AU",
+      review: "Very patient and good-natured teacher. Highly recommend.",
     },
     {
-      name: "Michael Tan",
-      role: "Adult Learner",
-      country: "Singapore",
-      image: Test4,
+      name: "Gayathri Bharath",
+      country: "UK",
+      code: "GB",
       review:
-        "The instructor explains concepts clearly and adapts lessons to my pace. Learning piano has become one of the highlights of my week.",
-      code: "SG",
+        "The lessons are well-structured and my child is making wonderful progress. Thoroughly enjoying the experience.",
     },
     {
-      name: "Sarah Johnson",
-      role: "Trinity Grade 5 Student",
-      country: "Toronto, Canada",
-      image: Test5,
+      name: "Vani Shekhar",
+      country: "UK",
+      code: "GB",
       review:
-        "The exam preparation was excellent. I gained confidence and achieved a Distinction in my Trinity examination.",
-      code: "CA",
+        "Excellent teaching with a structured approach. Always encouraging and supportive.",
+    },
+    {
+      name: "Tripti Motwani",
+      country: "Ireland",
+      code: "IE",
+      review:
+        "Wonderful experience from start to finish. The lessons are engaging and the progress has been remarkable.",
     },
   ];
 
@@ -198,8 +213,7 @@ export function PianoJourneySection() {
                           {step.points?.map((point) => (
                             <li
                               key={point}
-                              className="flex items-center gap-3 text-sm text-slate-800"
-                            >
+                              className="flex items-center gap-3 text-sm text-slate-800">
                               <div className="w-5 h-5 rounded-full bg-[#f3b63c] text-white flex items-center justify-center text-xs">
                                 ✓
                               </div>
@@ -250,8 +264,7 @@ export function PianoJourneySection() {
 
           <Link
             href="/book"
-            className="bg-[#f3b63c] hover:bg-amber-600 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2 transition"
-          >
+            className="bg-[#f3b63c] hover:bg-amber-600 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2 transition">
             Book My Free Trial Now
             <ArrowRight size={18} />
           </Link>
@@ -279,24 +292,17 @@ export function PianoJourneySection() {
               x: ["0%", "-50%"],
             }}
             transition={{
-              duration: 25,
+              duration: 60,
               repeat: Infinity,
               ease: "linear",
-            }}
-          >
+            }}>
             {loopingTestimonials.map((item, index) => (
               <div
                 key={`${item.name}-${index}`}
-                className="w-[500px] flex-shrink-0 bg-white rounded-3xl p-6 shadow-lg border"
-              >
+                className="w-[500px] flex-shrink-0 bg-white rounded-3xl p-6 shadow-lg border">
                 <div className="flex items-start gap-4">
-                  <div className="relative w-20 h-20 flex-shrink-0 overflow-hidden rounded-full">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fill
-                      className="object-cover"
-                    />
+                  <div className="w-16 h-16 rounded-full bg-[#f3b63c] text-white flex items-center justify-center">
+                    <Music4 size={30} />
                   </div>
 
                   <div className="flex-1">
@@ -314,7 +320,6 @@ export function PianoJourneySection() {
 
                 <div className="mt-6">
                   <h4 className="font-bold text-slate-900">{item.name}</h4>
-                  <p className="text-slate-500 text-sm">{item.role}</p>
 
                   <div className="flex items-center gap-2 mt-1">
                     <p className="text-slate-500 text-sm">{item.country}</p>

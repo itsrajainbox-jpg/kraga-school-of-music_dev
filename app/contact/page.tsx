@@ -6,8 +6,8 @@ import { ContactForm } from "@/components/contact/contact-form";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import CTAImage from "@/public/images/CTA2.png";
-import Contact from "@/public/images/Contact.jpg";
+import CTAImage from "@/public/images/CTA2.webp";
+import Contact from "@/public/images/Contact.webp";
 
 import {
   Mail,
@@ -32,8 +32,6 @@ import {
   Gift,
   UserCheck,
 } from "lucide-react";
-
-
 
 const contactMethods = [
   {
@@ -168,15 +166,16 @@ export default function ContactPage() {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
+              transition={{ duration: 0.7 }}>
               <span className="text-gold uppercase tracking-[0.3em] text-sm font-medium">
                 Contact Kraga School Of Music
               </span>
 
               <h1 className=" text-5xl lg:text-7xl font-bold mt-6 leading-tight">
                 Contact Kraga{" "}
-                <span className="text-[#f3b63c]">{renderAmpersand("Online Piano & Keyboard Lessons")}</span>
+                <span className="text-[#f3b63c]">
+                  {renderAmpersand("Online Piano & Keyboard Lessons")}
+                </span>
               </h1>
 
               <p className="text-lg text-muted-foreground leading-relaxed mt-8 max-w-2xl">
@@ -190,8 +189,7 @@ export default function ContactPage() {
                   {" "}
                   <Button
                     size="lg"
-                    className="bg-gold hover:bg-gold-dark text-background rounded-full px-8"
-                  >
+                    className="bg-gold hover:bg-gold-dark text-background rounded-full px-8">
                     Book Free Trial
                   </Button>
                 </Link>
@@ -206,8 +204,7 @@ export default function ContactPage() {
                     bg-background/50
                     backdrop-blur-xl
                     hover:bg-muted
-                  "
-                  >
+                  ">
                     Explore Courses
                   </Button>
                 </Link>
@@ -251,8 +248,7 @@ export default function ContactPage() {
         bg-[#f8f3ea]
         shadow-[0_10px_40px_rgba(0,0,0,0.06)]
         border border-[#eee2cf]
-      "
-                  >
+      ">
                     {/* Piano Key Top */}
                     <div className="absolute top-0 inset-x-0 flex h-10">
                       {Array.from({ length: 7 }).map((_, i) => (
@@ -264,8 +260,7 @@ export default function ContactPage() {
               border-[#d9d1c7]
               bg-white
               relative
-            "
-                        >
+            ">
                           {/* Black Keys */}
                           {[0, 1, 3, 4, 5].includes(i) && (
                             <div className="absolute right-[-8px] top-0 w-4 h-6 bg-black rounded-b-md z-10" />
@@ -325,8 +320,7 @@ export default function ContactPage() {
   ${index === 1 ? "top-28 right-0 w-[340px]" : ""}
 
   ${index === 2 ? "bottom-0 left-16 w-[300px]" : ""}
-`}
-                >
+`}>
                   <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center mb-6">
                     <method.icon className="w-8 h-8 text-gold" />
                   </div>
@@ -345,14 +339,12 @@ export default function ContactPage() {
 
                   <Button
                     asChild
-                    className="rounded-full bg-gold hover:bg-gold-dark text-background"
-                  >
+                    className="rounded-full bg-gold hover:bg-gold-dark text-background">
                     <a
                       href={method.action}
                       target={
                         method.title === "WhatsApp" ? "_blank" : undefined
-                      }
-                    >
+                      }>
                       {renderAmpersand(method.buttonText)}
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </a>
@@ -378,8 +370,7 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative"
-            >
+              className="relative">
               {/* Main Image */}
               <div className="relative h-[650px] rounded-[3rem] overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.12)]">
                 <Image
@@ -408,8 +399,7 @@ export default function ContactPage() {
             py-5
             shadow-2xl
             max-w-xs
-          "
-              >
+          ">
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-2xl bg-[#f4e4c8] flex items-center justify-center">
                     <Music2 className="w-7 h-7 text-[#b88632]" />
@@ -470,12 +460,10 @@ export default function ContactPage() {
                 <motion.div
                   key={index}
                   layout
-                  className="rounded-[28px] border border-[#f1e6d6] bg-white/90 p-4 shadow-[0_10px_30px_rgba(17,24,39,0.05)] backdrop-blur-sm transition-all"
-                >
+                  className="rounded-[28px] border border-[#f1e6d6] bg-white/90 p-4 shadow-[0_10px_30px_rgba(17,24,39,0.05)] backdrop-blur-sm transition-all">
                   <button
                     onClick={() => setOpenFAQ(isOpen ? null : index)}
-                    className="flex w-full items-center justify-between gap-4 text-left"
-                  >
+                    className="flex w-full items-center justify-between gap-4 text-left">
                     <div className="flex items-center gap-5">
                       <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-[#fff4df] text-[#c78b17] shadow-[inset_0_0_0_1px_rgba(199,139,23,0.08)]">
                         <Icon className="h-9 w-9" strokeWidth={1.9} />
@@ -507,8 +495,7 @@ export default function ContactPage() {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25, ease: "easeOut" }}
-                        className="overflow-hidden"
-                      >
+                        className="overflow-hidden">
                         <div className="pl-[92px] pr-6 pt-4 pb-2">
                           <p className="max-w-3xl leading-7 text-[#666]">
                             {renderAmpersand(item.answer)}
@@ -524,8 +511,7 @@ export default function ContactPage() {
 
           <div
             className="mt-16 overflow-hidden rounded-[30px] bg-[#071936] bg-cover bg-center bg-no-repeat shadow-[0_20px_60px_rgba(0,0,0,0.18)]"
-            style={{ backgroundImage: `url(${CTAImage.src})` }}
-          >
+            style={{ backgroundImage: `url(${CTAImage.src})` }}>
             <div className="grid items-stretch lg:grid-cols-2">
               <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
                 <div className="inline-flex items-center gap-3">
@@ -565,8 +551,7 @@ export default function ContactPage() {
                     return (
                       <div
                         key={item.title}
-                        className="flex items-center gap-3 text-white/90"
-                      >
+                        className="flex items-center gap-3 text-white/90">
                         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#d7a23a]/40 bg-[#d7a23a]/10 text-[#d7a23a]">
                           <Icon className="h-4 w-4" />
                         </div>
@@ -603,7 +588,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="font-serif text-xl font-bold text-[#111827]">
-                    Loved by 1000+ students across 10+ countries
+                    Loved by students across 10+ countries
                   </p>
                   <p className="mt-1 text-sm text-[#666]">
                     Join our global community of music learners today.
@@ -615,8 +600,7 @@ export default function ContactPage() {
                 {countries.map((country) => (
                   <div
                     key={country.name}
-                    className="flex flex-col items-center gap-2"
-                  >
+                    className="flex flex-col items-center gap-2">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-xl shadow-sm">
                       {country.flag}
                     </div>

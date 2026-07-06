@@ -12,9 +12,9 @@ import {
   Smile,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import Kids from "@/public/WhoItFor/Kids.jpg";
-import Professional from "@/public/WhoItFor/Professional.png";
-import GradeExams from "@/public/WhoItFor/GradeExams.png";
+import Kids from "@/public/WhoItFor/Kids.webp";
+import Professional from "@/public/WhoItFor/Professional.webp";
+import GradeExams from "@/public/WhoItFor/GradeExams.webp";
 import Image from "next/image";
 import Link from "next/link";
 const stats = [
@@ -112,8 +112,7 @@ export function SocialProofSection() {
                 <motion.div
                   key={index}
                   whileHover={{ y: -4 }}
-                  className="flex items-center gap-4 bg-white rounded-2xl border border-stone-200 p-5"
-                >
+                  className="flex items-center gap-4 bg-white rounded-2xl border border-stone-200 p-5">
                   <div className="w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center flex-shrink-0">
                     <Icon className="w-7 h-7 text-[#f3b63c]" />
                   </div>
@@ -161,8 +160,7 @@ export function SocialProofSection() {
               <motion.div
                 key={item.id}
                 whileHover={{ y: -6 }}
-                className="bg-white border border-stone-200 rounded-[30px] overflow-hidden shadow-sm"
-              >
+                className="bg-white border border-stone-200 rounded-[30px] overflow-hidden shadow-sm">
                 <div className="relative">
                   <Image
                     src={item.image}
@@ -215,12 +213,15 @@ export function SocialProofSection() {
                 </h3>
 
                 <p className="text-slate-600 mt-1">
-                  Join 1000+ students achieving their music goals every day.
+                  Join Students across 10+ countries achieving their music goals
+                  every day.
                 </p>
               </div>
             </div>
 
-            <Link href="book" className="w-full lg:w-auto px-8 py-4 bg-[#f3b63c] hover:bg-[#f3b63c] transition-colors text-white rounded-xl font-medium flex items-center justify-center gap-2">
+            <Link
+              href="book"
+              className="w-full lg:w-auto px-8 py-4 bg-[#f3b63c] hover:bg-[#f3b63c] transition-colors text-white rounded-xl font-medium flex items-center justify-center gap-2">
               <Calendar className="w-5 h-5" />
               Book Your Free Trial Class
               <span>→</span>

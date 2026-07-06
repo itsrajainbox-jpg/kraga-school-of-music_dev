@@ -126,8 +126,7 @@ export default function CoursesPage() {
             {features.map((item, index) => (
               <div
                 key={item.title}
-                className={`flex items-start gap-4 px-0 md:px-6 ${index !== 3 ? "md:border-r md:border-slate-200" : ""}`}
-              >
+                className={`flex items-start gap-4 px-0 md:px-6 ${index !== 3 ? "md:border-r md:border-slate-200" : ""}`}>
                 <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#fff5e6] shadow-sm">
                   {item.icon}
                 </div>
@@ -147,8 +146,7 @@ export default function CoursesPage() {
             {plans.map((plan) => (
               <article
                 key={plan.title}
-                className={`relative rounded-3xl border ${plan.border} bg-white shadow-[0_10px_30px_rgba(15,23,42,0.08)]`}
-              >
+                className={`relative rounded-3xl border ${plan.border} bg-white shadow-[0_10px_30px_rgba(15,23,42,0.08)]`}>
                 {plan.badge && (
                   <div className="absolute left-1/2 -top-4 z-30 -translate-x-1/2 whitespace-nowrap rounded-md bg-[#f3b63c] px-6 py-2 text-sm font-bold text-white shadow-lg">
                     {plan.badge}
@@ -254,21 +252,21 @@ export default function CoursesPage() {
                   <div className="h-14 w-14 overflow-hidden rounded-full border-2 border-white bg-slate-300">
                     <img
                       src="https://i.pinimg.com/736x/80/a6/49/80a64977e4a4749d8ce504e54f186f0e.jpg"
-                      alt="Student 1"
+                      alt="Teen Male Student"
                       className="h-full w-full object-cover"
                     />
                   </div>
                   <div className="h-14 w-14 overflow-hidden rounded-full border-2 border-white bg-slate-300">
                     <img
                       src="https://i.pinimg.com/736x/28/5f/48/285f48bede5d06d434900bce4a25c938.jpg"
-                      alt="Student 1"
+                      alt="Teen Female Student"
                       className="h-full w-full object-cover"
                     />
                   </div>
                   <div className="h-14 w-14 overflow-hidden rounded-full border-2 border-white bg-slate-300">
                     <img
                       src="https://i.pinimg.com/736x/b4/5c/13/b45c133201eff18f79b8ebf034dcf005.jpg"
-                      alt="Student 1"
+                      alt="Kid Student"
                       className="h-full w-full object-cover"
                     />
                   </div>
@@ -278,7 +276,8 @@ export default function CoursesPage() {
                     Join our global learning community
                   </h3>
                   <p className="mt-1 text-[15px] leading-7 text-slate-700">
-                    Be part of a thriving community of learners from across the globe.
+                    Be part of a thriving community of learners from across the
+                    globe.
                   </p>
                 </div>
               </div>

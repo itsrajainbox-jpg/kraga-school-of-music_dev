@@ -67,34 +67,41 @@ export function Navigation() {
         scrolled
           ? "bg-white/90 backdrop-blur-xl shadow-lg text-black"
           : "bg-transparent text-white"
-      }`}
-    >
+      }`}>
       <nav className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             {/* <Piano className="w-12 h-12 text-[#f3b63c]" /> */}
-            {isHomePage?scrolled?<Image
-              src="/images/LogoWhite.png"
-              alt="Logo"
-              width={48}
-              height={48}
-              className="w-12 h-12"
-            />:<Image
-              src="/images/Logo.png"
-              alt="Logo"
-              width={48}
-              height={48}
-              className="w-12 h-12"
-            />:<Image
-              src="/images/LogoWhite.png"
-              alt="Logo"
-              width={48}
-              height={48}
-              className="w-12 h-12"
-            />}
+            {isHomePage ? (
+              scrolled ? (
+                <Image
+                  src="/images/LogoWhite.webp"
+                  alt="Logo"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12"
+                />
+              ) : (
+                <Image
+                  src="/images/Logo.webp"
+                  alt="Logo"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12"
+                />
+              )
+            ) : (
+              <Image
+                src="/images/LogoWhite.webp"
+                alt="Logo"
+                width={48}
+                height={48}
+                className="w-12 h-12"
+              />
+            )}
             {/* <Image
-              src="/images/Logo.png"
+              src="/images/Logo.webp"
               alt="Logo"
               width={48}
               height={48}
@@ -108,8 +115,7 @@ export function Navigation() {
                       ? "text-black"
                       : "text-white"
                     : "text-black"
-                }`}
-              >
+                }`}>
                 KRAGA
               </h1>
 
@@ -120,8 +126,7 @@ export function Navigation() {
                       ? "text-black"
                       : "text-white"
                     : "text-black"
-                }`}
-              >
+                }`}>
                 SCHOOL OF MUSIC
               </p>
             </div>
@@ -135,8 +140,7 @@ export function Navigation() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="relative group"
-              >
+                className="relative group">
                 {"children" in link ? (
                   <>
                     <button
@@ -146,8 +150,7 @@ export function Navigation() {
                             ? "text-black"
                             : "text-white"
                           : "text-black"
-                      }`}
-                    >
+                      }`}>
                       {link.label}
 
                       <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" />
@@ -163,8 +166,7 @@ export function Navigation() {
                               isActive(child.href)
                                 ? "text-amber-600 bg-amber-50"
                                 : "text-gray-700 hover:bg-amber-50 hover:text-amber-600"
-                            }`}
-                          >
+                            }`}>
                             {child.label}
                           </Link>
                         ))}
@@ -182,8 +184,7 @@ export function Navigation() {
                             ? "text-black hover:text-[#f3b63c]"
                             : "text-white hover:text-[#f3b63c]"
                           : "text-black hover:text-[#f3b63c]"
-                    }`}
-                  >
+                    }`}>
                     {link.label}
                   </Link>
                 )}
@@ -198,12 +199,10 @@ export function Navigation() {
                 scale: 1.05,
                 boxShadow: "0 0 30px rgba(212,175,55,0.3)",
               }}
-              whileTap={{ scale: 0.95 }}
-            >
+              whileTap={{ scale: 0.95 }}>
               <Button
                 asChild
-                className="bg-[#f3b63c] hover:bg-amber-600 text-white font-medium px-6 rounded-full"
-              >
+                className="bg-[#f3b63c] hover:bg-amber-600 text-white font-medium px-6 rounded-full">
                 <Link href="/book">Book Free Trial Class</Link>
               </Button>
             </motion.div>
@@ -228,8 +227,7 @@ export function Navigation() {
 
               <SheetContent
                 side="right"
-                className="w-[320px] bg-white border-l border-gray-200 px-6"
-              >
+                className="w-[320px] bg-white border-l border-gray-200 px-6">
                 <div className="mb-10 mt-8">
                   <h2 className="text-2xl font-bold">KRAGA</h2>
                   <p className="text-sm text-gray-500">School of Music</p>
@@ -242,8 +240,7 @@ export function Navigation() {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.1 }}
-                        className="border-b border-gray-200 pb-3"
-                      >
+                        className="border-b border-gray-200 pb-3">
                         {"children" in link ? (
                           <>
                             <button
@@ -252,8 +249,7 @@ export function Navigation() {
                                   openMenu === link.label ? null : link.label,
                                 )
                               }
-                              className="w-full flex items-center justify-between py-2 text-lg font-medium"
-                            >
+                              className="w-full flex items-center justify-between py-2 text-lg font-medium">
                               <span>{link.label}</span>
 
                               <ChevronDown
@@ -276,8 +272,7 @@ export function Navigation() {
                                     opacity: 0,
                                   }}
                                   transition={{ duration: 0.25 }}
-                                  className="overflow-hidden"
-                                >
+                                  className="overflow-hidden">
                                   <div className="ml-4 mt-2 rounded-xl bg-amber-50 p-3 flex flex-col gap-3">
                                     {link.children.map((child) => (
                                       <Link
@@ -288,8 +283,7 @@ export function Navigation() {
                                           isActive(child.href)
                                             ? "text-amber-600 font-semibold"
                                             : "text-gray-700 hover:text-amber-600"
-                                        }`}
-                                      >
+                                        }`}>
                                         {child.label}
                                       </Link>
                                     ))}
@@ -306,8 +300,7 @@ export function Navigation() {
                               isActive(link.href)
                                 ? "text-[#f3b63c] font-semibold"
                                 : "hover:text-[#f3b63c] text-gray-700"
-                            }`}
-                          >
+                            }`}>
                             {link.label}
                           </Link>
                         )}
@@ -319,12 +312,10 @@ export function Navigation() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6 }}
-                    className="pt-4"
-                  >
+                    className="pt-4">
                     <Button
                       asChild
-                      className="w-full bg-[#f3b63c] hover:bg-amber-600 text-white rounded-full"
-                    >
+                      className="w-full bg-[#f3b63c] hover:bg-amber-600 text-white rounded-full">
                       <Link href="/book" onClick={() => setIsOpen(false)}>
                         Book Free Trial Class
                       </Link>

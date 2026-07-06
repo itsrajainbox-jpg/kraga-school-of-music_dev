@@ -14,7 +14,7 @@ import {
   Earth,
   LibraryBig,
 } from "lucide-react";
-import AboutImage from "@/public/images/Teach.jpg";
+import AboutImage from "@/public/images/Teach.webp";
 const points = [
   {
     icon: Users,
@@ -174,8 +174,7 @@ export default function KragaDifference() {
                     idx !== highlights.length - 1
                       ? "lg:border-r lg:border-[#E9DECF]"
                       : ""
-                  }`}
-                >
+                  }`}>
                   <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-[#FBF4E8]">
                     <Icon
                       className="h-9 w-9 text-[#f3b63c]"
@@ -211,8 +210,7 @@ export default function KragaDifference() {
     p-8
     md:p-12
     shadow-[0_25px_80px_rgba(0,0,0,0.35)]
-  "
-        >
+  ">
           {/* Decorative Glow Effects */}
           <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-[#f3b63c]/10 blur-3xl" />
           <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />

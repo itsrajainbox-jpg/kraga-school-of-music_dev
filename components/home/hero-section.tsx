@@ -38,10 +38,20 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen overflow-hidden playfair">
+      {/* Mobile Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center md:hidden"
         style={{
-          backgroundImage: "url('/Hero/HeroBG.png')",
+          backgroundImage:
+            "url('https://i.pinimg.com/1200x/c7/bc/69/c7bc696d0c6b0b8374c15937afa82d0f.jpg')",
+        }}
+      />
+
+      {/* Desktop Background */}
+      <div
+        className="absolute inset-0 hidden bg-cover bg-center md:block"
+        style={{
+          backgroundImage: "url('/Hero/HeroBG.webp')",
         }}
       />
 
@@ -61,17 +71,21 @@ export function HeroSection() {
             </h1>
 
             <p className="mt-5 sm:mt-6 max-w-xl text-base sm:text-lg leading-7 sm:leading-8 text-slate-300">
-              Expert lead lessons for kids and adults personalised to your
-              pace, scheduled around your life. Start with a free trial class,
-              no commitment required.
+              Expert lead lessons for kids and adults personalised to your pace,
+              scheduled around your life. Start with a free trial class, no
+              commitment required.
             </p>
 
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4">
-              <Link href="/book" className="rounded-xl bg-[#f3b63c] px-6 sm:px-8 py-3 sm:py-4 font-semibold text-white transition hover:bg-amber-600">
+              <Link
+                href="/book"
+                className="rounded-xl bg-[#f3b63c] px-6 sm:px-8 py-3 sm:py-4 font-semibold text-white transition hover:bg-amber-600">
                 Book Your Free Trial Class →
               </Link>
 
-              <Link href="/courses" className="rounded-xl border border-[#f3b63c] px-6 sm:px-8 py-3 sm:py-4 font-semibold text-white transition hover:bg-white/10">
+              <Link
+                href="/courses"
+                className="rounded-xl border border-[#f3b63c] px-6 sm:px-8 py-3 sm:py-4 font-semibold text-white transition hover:bg-white/10">
                 Explore Courses
               </Link>
             </div>
@@ -88,7 +102,7 @@ export function HeroSection() {
                   <img
                     key={item}
                     src={item}
-                    alt=""
+                    alt="Student"
                     className="h-10 w-10 sm:h-12 sm:w-12 rounded-full border-2 border-slate-900 object-cover bg-slate-700"
                   />
                 ))}
@@ -105,15 +119,14 @@ export function HeroSection() {
             </div>
 
             {/* Features */}
-            <div className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="hidden lg:grid lg:grid-cols-4 gap-4 mt-10">
               {features.map((item) => {
                 const Icon = item.icon;
 
                 return (
                   <div
                     key={item.title}
-                    className="rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-[#f3b63c]/30"
-                  >
+                    className="rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-[#f3b63c]/30">
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#f3b63c]/10">
                       <Icon className="h-6 w-6 text-[#f3b63c]" />
                     </div>

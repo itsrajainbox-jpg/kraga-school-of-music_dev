@@ -60,7 +60,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3">
               {/* <Piano className="w-12 h-12 text-[#f3b63c]" /> */}
               <Image
-                src="/images/LogoWhite.png"
+                src="/images/LogoWhite.webp"
                 alt="Logo"
                 width={48}
                 height={48}
@@ -90,8 +90,7 @@ export function Footer() {
                   whileTap={{ scale: 0.95 }}
                   className="w-10 h-10 glass-card rounded-full flex items-center justify-center hover:bg-[#f3b63c]/10 transition-colors"
                   aria-label={social.label}
-                  target="_blank"
-                >
+                  target="_blank">
                   <social.icon className="w-6 h-6 text-[#f3b63c]" />
                 </motion.a>
               ))}
@@ -106,8 +105,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-md text-muted-foreground hover:text-[#f3b63c] transition-colors relative group"
-                  >
+                    className="text-md text-muted-foreground hover:text-[#f3b63c] transition-colors relative group">
                     {link.label}
                     <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#f3b63c] group-hover:w-full transition-all duration-300" />
                   </Link>
@@ -124,8 +122,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-md text-muted-foreground hover:text-[#f3b63c] transition-colors relative group"
-                  >
+                    className="text-md text-muted-foreground hover:text-[#f3b63c] transition-colors relative group">
                     {link.label}
                     <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#f3b63c] group-hover:w-full transition-all duration-300" />
                   </Link>
@@ -143,8 +140,7 @@ export function Footer() {
                   href="mailto:info@kragaschoolofmusic.com"
                   target="_self"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-md text-muted-foreground hover:text-[#f3b63c] transition-colors group"
-                >
+                  className="flex items-center gap-3 text-md text-muted-foreground hover:text-[#f3b63c] transition-colors group">
                   <div className="w-8 h-8 glass-card rounded-full flex items-center justify-center group-hover:bg-[#f3b63c]/10 transition-colors">
                     <Mail className="w-4 h-4 text-[#f3b63c]" />
                   </div>
@@ -153,9 +149,8 @@ export function Footer() {
               </li>
               <li>
                 <a
-                   href="tel: +918807838099"
-                  className="flex items-center gap-3 text-md text-muted-foreground hover:text-[#f3b63c] transition-colors group"
-                >
+                  href="tel: +918807838099"
+                  className="flex items-center gap-3 text-md text-muted-foreground hover:text-[#f3b63c] transition-colors group">
                   <div className="w-8 h-8 glass-card rounded-full flex items-center justify-center group-hover:bg-[#f3b63c]/10 transition-colors">
                     <Phone className="w-4 h-4 text-[#f3b63c]" />
                   </div>
@@ -183,14 +178,12 @@ export function Footer() {
           <div className="flex items-center gap-8">
             <Link
               href="/privacy"
-              className="text-sm text-muted-foreground hover:text-[#f3b63c] transition-colors"
-            >
+              className="text-sm text-muted-foreground hover:text-[#f3b63c] transition-colors">
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-sm text-muted-foreground hover:text-[#f3b63c] transition-colors"
-            >
+              className="text-sm text-muted-foreground hover:text-[#f3b63c] transition-colors">
               Terms of Service
             </Link>
           </div>
