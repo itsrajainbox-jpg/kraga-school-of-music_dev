@@ -30,7 +30,7 @@ function Calendar({
       showOutsideDays={showOutsideDays}
       // 1. Change the main className - increase padding and cell size
 className={cn(
-  'bg-background group/calendar p-6 md:p-10 relative [--cell-size:--spacing(14)] w-full max-w-[500px] [[data-slot=card-content]_&]:bg-transparent [[data-slot=popover-content]_&]:bg-transparent',
+  'bg-background group/calendar p-2 sm:p-6 md:p-10 relative [--cell-size:--spacing(9)] sm:[--cell-size:--spacing(11)] md:[--cell-size:--spacing(14)] w-full max-w-[500px] overflow-x-hidden [[data-slot=card-content]_&]:bg-transparent [[data-slot=popover-content]_&]:bg-transparent',
   String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
   String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
   className,
@@ -69,7 +69,7 @@ month: cn('flex flex-col w-full gap-6', defaultClassNames.month),
           defaultClassNames.month_caption,
         ),
         dropdowns: cn(
-          'w-full flex items-center text-sm font-medium justify-center h-(--cell-size) gap-1.5',
+          'w-full flex items-center text-xs font-medium justify-center h-(--cell-size) gap-1.5',
           defaultClassNames.dropdowns,
         ),
         dropdown_root: cn(
@@ -80,19 +80,19 @@ month: cn('flex flex-col w-full gap-6', defaultClassNames.month),
           'absolute bg-popover inset-0 opacity-0',
           defaultClassNames.dropdown,
         ),
-       // 5. Increase month/year label font size and height
+       // 5. Month/year label - font size decreased
 caption_label: cn(
   'select-none font-medium',
   captionLayout === 'label'
-    ? 'text-xl'
-    : 'rounded-md pl-2 pr-1 flex items-center gap-1 text-xl h-12 [&>svg]:text-muted-foreground [&>svg]:size-5',
+    ? 'text-sm lg:text-xl'
+    : 'rounded-md pl-2 pr-1 flex items-center gap-1 text-sm  lg:text-xl h-12 [&>svg]:text-muted-foreground [&>svg]:size-5',
   defaultClassNames.caption_label,
 ),
         table: 'w-full border-collapse',
         weekdays: cn('flex', defaultClassNames.weekdays),
-       // 4. Increase weekday font size
+       // 4. Weekday label - font size decreased
 weekday: cn(
-  'text-muted-foreground rounded-md flex-1 font-normal text-[1.1rem] select-none',
+  'text-muted-foreground rounded-md flex-1 font-normal text-xs lg:text-xl select-none',
   defaultClassNames.weekday,
 ),
         week: cn('flex w-full mt-2', defaultClassNames.week),
@@ -205,9 +205,9 @@ function CalendarDayButton({
       data-range-start={modifiers.range_start}
       data-range-end={modifiers.range_end}
       data-range-middle={modifiers.range_middle}
-     // 6. Increase day button size and font
+     // 6. Day number - font size decreased
 className={cn(
-  'data-[selected-single=true]:bg-gold data-[selected-single=true]:text-black data-[range-middle=true]:bg-accent data-[range-middle=true]:text-accent-foreground data-[range-start=true]:bg-gold data-[range-start=true]:text-black data-[range-end=true]:bg-gold data-[range-end=true]:text-black group-data-[focused=true]/day:border-ring group-data-[focused=true]/day:ring-gold/50 dark:hover:text-accent-foreground flex aspect-square size-auto w-full min-w-(--cell-size) flex-col gap-2 leading-none font-normal text-2xl group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10 group-data-[focused=true]/day:ring-[3px] data-[range-end=true]:rounded-md data-[range-end=true]:rounded-r-md data-[range-middle=true]:rounded-none data-[range-start=true]:rounded-md data-[range-start=true]:rounded-l-md [&>span]:text-xl [&>span]:opacity-100',
+  'data-[selected-single=true]:bg-gold data-[selected-single=true]:text-black data-[range-middle=true]:bg-accent data-[range-middle=true]:text-accent-foreground data-[range-start=true]:bg-gold data-[range-start=true]:text-black data-[range-end=true]:bg-gold data-[range-end=true]:text-black group-data-[focused=true]/day:border-ring group-data-[focused=true]/day:ring-gold/50 dark:hover:text-accent-foreground flex aspect-square size-auto w-full min-w-(--cell-size) flex-col gap-1 leading-none font-normal text-sm lg:text-xl group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10 group-data-[focused=true]/day:ring-[3px] data-[range-end=true]:rounded-md data-[range-end=true]:rounded-r-md data-[range-middle=true]:rounded-none data-[range-start=true]:rounded-md data-[range-start=true]:rounded-l-md [&>span]:text-sm [&>span]:opacity-100',
   defaultClassNames.day,
   className,
 )}

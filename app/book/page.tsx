@@ -7,7 +7,7 @@ import { BookingForm } from "@/components/booking/booking-form";
 
 export default function BookPage() {
   return (
-    <div className="bg-white text-black overflow-hidden py-16 md:py-24">
+    <div className="bg-white text-black overflow-hidden py-28 md:py-24 lg-16 ">
       {/* SEO Heading */}
       <div className="text-center mb-10">
         <h1 className="text-4xl lg:text-5xl font-bold tracking-tight">
