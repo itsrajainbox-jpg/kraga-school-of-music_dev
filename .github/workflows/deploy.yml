@@ -27,17 +27,17 @@ jobs:
       - name: Build static export
         run: npm run build
 
-      - name: Normalize FTP host (strip ftp:// and any path)
-        id: ftp
+      - name: Verify FTP secrets present
         run: |
-          RAW="${{ secrets.FTP_HOST }}"
-          HOST=$(echo "$RAW" | sed 's#^ftp://##; s#^ftps://##; s#/.*##')
-          echo "host=$HOST" >> "$GITHUB_OUTPUT"
+          if [ -z "${{ secrets.FTP_HOST }}" ] || [ -z "${{ secrets.FTP_USER }}" ] || [ -z "${{ secrets.FTP_PASS }}" ]; then
+            echo "Error: FTP_HOST / FTP_USER / FTP_PASS secrets are not all set in repo Settings > Secrets."
+            exit 1
+          fi
 
       - name: FTP upload to Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
-          server: ${{ steps.ftp.outputs.host }}
+          server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           local-dir: ./out/
