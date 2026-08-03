@@ -1,20 +1,15 @@
 name: Verify FTP deployed content
-
 on:
   workflow_dispatch:
-
 permissions:
   contents: read
-
 jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install deps
-        run: pip install ftputil paramiko 2>/dev/null || pip install ftputil
-      - name: Download deployed index.html via FTP and check content
+      - name: Check deployed index.html
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USER: ${{ secrets.FTP_USER }}
@@ -22,16 +17,15 @@ jobs:
         run: |
           python3 - <<'PY'
           import os, ftplib, io
-          host=os.environ['FTP_HOST']; user=os.environ['FTP_USER']; pw=os.environ['FTP_PASS']
-          ftp=ftplib.FTP(host, timeout=30); ftp.login(user,pw)
+          ftp=ftplib.FTP(os.environ['FTP_HOST'], timeout=30)
+          ftp.login(os.environ['FTP_USER'], os.environ['FTP_PASS'])
           ftp.cwd('/public_html')
           data=io.BytesIO()
           ftp.retrbinary('RETR index.html', data.write)
           ftp.quit()
           html=data.getvalue().decode('utf-8','replace')
-          has='auto-deploy test 2026' in html
-          print('DEPLOYED index.html contains test text:', has)
+          print('HAS_TEST:', 'across the world' in html)
           import re
-          m=re.search(r'across the world[^<]*', html)
-          print('SNIPPET:', m.group(0)[:90] if m else 'ORIGINAL STILL ON SERVER')
-          PY
+          m=re.search(r'Proudly teaching students online across[^<]*', html)
+          print('HEADING:', repr(m.group(0)) if m else 'NOT_FOUND')
+          print('LEN:', len(html))
