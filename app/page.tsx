@@ -20,7 +20,7 @@ export default function HomePage() {
       <section className="py-10 bg-white">
         <div className="container mx-auto px-4">
           <h3 className="text-center text-xl md:text-2xl font-semibold text-slate-900 mb-8">
-          Proudly teaching students online across the world (auto-deploy test 2026)
+          Proudly teaching students online across
           </h3>
 
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
