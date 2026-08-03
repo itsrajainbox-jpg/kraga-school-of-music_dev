@@ -7,9 +7,7 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Check deployed index.html
+      - name: Check current index.html on server
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USER: ${{ secrets.FTP_USER }}
@@ -29,3 +27,7 @@ jobs:
           m=re.search(r'Proudly teaching students online across[^<]*', html)
           print('HEADING:', repr(m.group(0)) if m else 'NOT_FOUND')
           print('LEN:', len(html))
+          # show first 500 chars of heading area
+          m2=re.search(r'Proudly teaching students online across.*?</h3>', html, re.DOTALL)
+          print('CONTEXT:', m2.group(0)[:200] if m2 else 'NO MATCH')
+          PY
