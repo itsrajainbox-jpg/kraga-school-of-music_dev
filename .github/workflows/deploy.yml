@@ -35,7 +35,7 @@ jobs:
           echo "host=$HOST" >> "$GITHUB_OUTPUT"
 
       - name: FTP upload to Hostinger
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ steps.ftp.outputs.host }}
           username: ${{ secrets.FTP_USER }}
