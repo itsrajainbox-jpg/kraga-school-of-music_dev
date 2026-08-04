@@ -45,5 +45,6 @@ jobs:
             **/node_modules/**
             **/.next/**
             **/.DS_Store
+            **/.in.*
         env:
           FTP_TIMEOUT: 180
