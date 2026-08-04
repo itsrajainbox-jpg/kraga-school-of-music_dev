@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Book Free Online Piano Trial Class | Kraga School of Music",
+  description: "Book a free 30-minute online piano trial lesson with Kraga. No commitment, no payment required. Flexible slots for all ages and levels.",
+  alternates: { canonical: "/book/" }
+};
+
 "use client";
 
 import Image from "next/image";
