@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Kraga School of Music | Page.Tsx",
+  description: "Learn piano online with Kraga. Structured lessons, flexible schedule, expert teachers.",
+  alternates: { canonical: "/" }
+};
+
 import { HeroSection } from "@/components/home/hero-section";
 import { SocialProofSection } from "@/components/home/SocialProofSection";
 import { PianoJourneySection } from "@/components/home/PianoJourneySection";
