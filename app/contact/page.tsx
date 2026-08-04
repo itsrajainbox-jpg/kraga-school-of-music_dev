@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Contact Kraga School of Music | Online Piano Lessons Inquiry",
+  description: "Contact Kraga for online piano lesson inquiries, scheduling, and support. Fast replies for bookings and class information.",
+  alternates: { canonical: "/contact/" }
+};
+
 "use client";
 
 import { useState } from "react";
