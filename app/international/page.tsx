@@ -1,8 +1,5 @@
-export const metadata = {
-  title: "Online Piano Lessons for International Students | Kraga",
-  description: "Kraga offers structured online piano lessons for international students in USA, UK, Canada, Australia, India and more. Free trial available.",
-  alternates: { canonical: "/international/" }
-};
+
+
 
 "use client";
 
