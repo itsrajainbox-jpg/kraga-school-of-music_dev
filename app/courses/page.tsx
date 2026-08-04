@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Online Piano Courses & Classes | Beginner to Advanced | Kraga",
+  description: "Explore structured online piano courses for beginners, intermediate, advanced, and keyboard students. Live 1:1 lessons, flexible scheduling, Trinity exam prep.",
+  alternates: { canonical: "/courses/" }
+};
+
 
 
 
