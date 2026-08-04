@@ -1,8 +1,5 @@
-export const metadata = {
-  title: "About Kraga School of Music | Online Piano Teachers",
-  description: "Learn about Kraga School of Music, our teaching approach, certified instructors, and structured curriculum for online piano students worldwide.",
-  alternates: { canonical: "/about/" }
-};
+
+
 
 // app/components/KragaDifference.tsx
 import Image from "next/image";
