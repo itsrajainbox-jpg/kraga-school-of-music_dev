@@ -27,13 +27,6 @@ jobs:
       - name: Build static export
         run: npm run build
 
-      - name: Verify FTP secrets present
-        run: |
-          if [ -z "${{ secrets.FTP_HOST }}" ] || [ -z "${{ secrets.FTP_USER }}" ] || [ -z "${{ secrets.FTP_PASS }}" ]; then
-            echo "Error: FTP_HOST / FTP_USER / FTP_PASS secrets are not all set in repo Settings > Secrets."
-            exit 1
-          fi
-
       - name: FTP upload to Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
@@ -41,11 +34,13 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           local-dir: ./out/
-          server-dir: /public_html/
-          dangerous-clean-slate: true
+          server-dir: /domains/kragaschoolofmusic.com/public_html/
+          dangerous-clean-slate: false
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
             **/.next/**
             **/.DS_Store
+        env:
+          FTP_TIMEOUT: 180
