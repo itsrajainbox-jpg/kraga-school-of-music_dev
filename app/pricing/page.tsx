@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Online Piano Lesson Pricing & Plans | Kraga School of Music",
+  description: "Transparent pricing for online piano lessons. Beginner to advanced plans, 24/48 session programs, flexible scheduling, and free trial available.",
+  alternates: { canonical: "/pricing/" }
+};
+
 "use client";
 
 import { useState, useEffect } from "react";
