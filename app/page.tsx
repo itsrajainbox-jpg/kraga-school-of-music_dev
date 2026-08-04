@@ -1,14 +1,13 @@
 export const metadata = {
   title: "Kraga School of Music | Online Piano Lessons for All Ages",
-  description:
-    "Structured online piano lessons for kids and adults. Free trial class, flexible schedules, Trinity exam prep. Students across 10+ countries.",
+  description: "Structured online piano lessons for kids and adults. Free trial class, flexible schedules, Trinity exam prep. Students across 10+ countries.",
   alternates: { canonical: "/" }
 };
 
 import { HeroSection } from "@/components/home/hero-section";
 import { SocialProofSection } from "@/components/home/SocialProofSection";
 import { PianoJourneySection } from "@/components/home/PianoJourneySection";
-import { GlobalStudentsSection } from "@/components/home/GlobalStudentsSection";
+import { GlobalStudentsSection } from "@/components/home/global-students-section";
 import { WhyStudentsChooseKraga } from "@/components/home/WhyStudentsChooseKraga";
 import { CTASection } from "@/components/home/cta-section";
 import ReactCountryFlag from "react-country-flag";
@@ -26,9 +25,10 @@ export default function HomePage() {
       <HeroSection />
       <section className="py-10 bg-white">
         <div className="container mx-auto px-4">
-          <p className="text-center text-xl md:text-2xl font-semibold text-slate-900 mb-8">
-            Proudly Teaching Students Online Across the Globe
-          </p>
+          <h3 className="text-center text-xl md:text-2xl font-semibold text-slate-900 mb-8">
+          Proudly teaching students online across the world
+          </h3>
+
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {countries.map((country) => (
               <div key={country.code} className="flex items-center gap-3">
@@ -46,6 +46,7 @@ export default function HomePage() {
                 </span>
               </div>
             ))}
+
             <span className="font-medium text-slate-800">
               and 10+ more countries
             </span>
@@ -54,9 +55,9 @@ export default function HomePage() {
       </section>
       <SocialProofSection />
       <PianoJourneySection />
-      <GlobalStudentsSection />
+      {/* <GlobalStudentsSection /> */}
       <WhyStudentsChooseKraga />
-      <CTASection />
+      {/* <CTASection /> */}
     </>
   );
 }
