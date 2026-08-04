@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Kraga School of Music | International",
+  description: "Learn piano online with Kraga. Structured lessons, flexible schedule, expert teachers.",
+  alternates: { canonical: "/international/" }
+};
+
 
 
 
