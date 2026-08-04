@@ -7,7 +7,6 @@ export const metadata = {
 import { HeroSection } from "@/components/home/hero-section";
 import { SocialProofSection } from "@/components/home/SocialProofSection";
 import { PianoJourneySection } from "@/components/home/PianoJourneySection";
-import { GlobalStudentsSection } from "@/components/home/global-students-section";
 import { WhyStudentsChooseKraga } from "@/components/home/WhyStudentsChooseKraga";
 import { CTASection } from "@/components/home/cta-section";
 import ReactCountryFlag from "react-country-flag";
