@@ -1,8 +1,5 @@
-export const metadata = {
-  title: "Kraga School of Music | Book",
-  description: "Learn piano online with Kraga. Structured lessons, flexible schedule, expert teachers.",
-  alternates: { canonical: "/book/" }
-};
+
+
 
 
 
