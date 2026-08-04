@@ -54,7 +54,7 @@ export default function HomePage() {
       </section>
       <SocialProofSection />
       <PianoJourneySection />
-      {/* <GlobalStudentsSection /> */}
+      <GlobalStudentsSection />
       <WhyStudentsChooseKraga />
       {/* <CTASection /> */}
     </>
