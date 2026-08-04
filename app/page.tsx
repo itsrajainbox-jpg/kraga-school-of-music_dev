@@ -1,12 +1,7 @@
-export const metadata = {
-  title: "Kraga School of Music | Online Piano Lessons for All Ages",
-  description: "Structured online piano lessons for kids and adults. Free trial class, flexible schedules, Trinity exam prep. Students across 10+ countries.",
-  alternates: { canonical: "/" }
-};
-
 import { HeroSection } from "@/components/home/hero-section";
 import { SocialProofSection } from "@/components/home/SocialProofSection";
 import { PianoJourneySection } from "@/components/home/PianoJourneySection";
+import { GlobalStudentsSection } from "@/components/home/global-students-section";
 import { WhyStudentsChooseKraga } from "@/components/home/WhyStudentsChooseKraga";
 import { CTASection } from "@/components/home/cta-section";
 import ReactCountryFlag from "react-country-flag";
@@ -54,7 +49,7 @@ export default function HomePage() {
       </section>
       <SocialProofSection />
       <PianoJourneySection />
-      <GlobalStudentsSection />
+      {/* <GlobalStudentsSection /> */}
       <WhyStudentsChooseKraga />
       {/* <CTASection /> */}
     </>
