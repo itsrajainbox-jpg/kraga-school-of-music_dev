@@ -62,7 +62,7 @@ const pricingPlans = [
     prices: [
       {
         duration: "60 Minute Private 1:1 Lessons",
-        amount: "$349 USD",
+        amount: "$360 USD",
       },
     ],
     features: [
@@ -81,7 +81,7 @@ const pricingPlans = [
     prices: [
       {
         duration: "60 Minute Private 1:1 Lessons",
-        amount: "$679 USD",
+        amount: "$624 USD",
       },
     ],
     features: [
@@ -100,7 +100,7 @@ const pricingPlans = [
     prices: [
       {
         duration: "60 Minute Private 1:1 Lessons",
-        amount: "₹18,999",
+        amount: "₹19,176",
       },
     ],
     features: [
@@ -119,7 +119,7 @@ const pricingPlans = [
     prices: [
       {
         duration: "60 Minute Private 1:1 Lessons",
-        amount: "₹34,999",
+        amount: "₹31,152",
       },
     ],
     features: [
@@ -209,10 +209,15 @@ export default function PricingPage() {
         <div className="mx-auto mt-16 max-w-5xl grid gap-6 xl:grid-cols-2">
           {visiblePlans.map((plan, index) => {
             const Icon = plan.icon;
-            const raw = plan.prices[0].amount.replace(/[^0-9]/g, "");
-            const numeric = Number(raw.replace(/,/g, ""));
             const sessions = plan.title.includes("24") ? 24 : 48;
-            const perClass = (numeric / sessions).toFixed(2);
+            const perClass =
+              sessions === 24
+                ? plan.prices[0].amount.includes("$")
+                  ? "15.00"
+                  : "799.00"
+                : plan.prices[0].amount.includes("$")
+                  ? "13.00"
+                  : "649.00";
             const currency = plan.prices[0].amount.includes("$") ? "$" : "₹";
 
             return (
