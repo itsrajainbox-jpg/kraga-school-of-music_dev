@@ -213,11 +213,11 @@ export default function PricingPage() {
             const perClass =
               sessions === 24
                 ? plan.prices[0].amount.includes("$")
-                  ? "15.00"
-                  : "799.00"
+                  ? "15"
+                  : "799"
                 : plan.prices[0].amount.includes("$")
-                  ? "13.00"
-                  : "649.00";
+                  ? "13"
+                  : "649";
             const currency = plan.prices[0].amount.includes("$") ? "$" : "₹";
 
             return (
