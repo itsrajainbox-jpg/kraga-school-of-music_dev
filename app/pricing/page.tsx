@@ -62,7 +62,7 @@ const pricingPlans = [
     prices: [
       {
         duration: "60 Minute Private 1:1 Lessons",
-        amount: "$360 USD",
+        amount: "$349 USD",
       },
     ],
     features: [
@@ -81,7 +81,7 @@ const pricingPlans = [
     prices: [
       {
         duration: "60 Minute Private 1:1 Lessons",
-        amount: "$690 USD",
+        amount: "$679 USD",
       },
     ],
     features: [
@@ -100,7 +100,7 @@ const pricingPlans = [
     prices: [
       {
         duration: "60 Minute Private 1:1 Lessons",
-        amount: "₹19,200",
+        amount: "₹18,999",
       },
     ],
     features: [
@@ -119,7 +119,7 @@ const pricingPlans = [
     prices: [
       {
         duration: "60 Minute Private 1:1 Lessons",
-        amount: "₹36,000",
+        amount: "₹34,999",
       },
     ],
     features: [
