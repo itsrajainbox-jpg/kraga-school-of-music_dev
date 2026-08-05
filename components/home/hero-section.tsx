@@ -63,30 +63,21 @@ export function HeroSection() {
             </div>
 
             <h1 className="mt-6 sm:mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight playfair">
-              Live One-on-One
+              Start Your Piano Journey
               <br />
-              Online Piano <span className="inter">&</span> Keyboard
-              <br />
-              <span className="text-[#f3b63c]">Lessons</span>
+              With a <span className="text-[#f3b63c]">Free Trial</span>
             </h1>
 
             <p className="mt-5 sm:mt-6 max-w-xl text-base sm:text-lg leading-7 sm:leading-8 text-slate-300">
-              Expert lead lessons for kids and adults personalised to your pace,
-              scheduled around your life. Start with a free trial class, no
-              commitment required.
+              Limited trial slots are available this week. Book a no-obligation
+              1-on-1 session and start learning on your schedule.
             </p>
 
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4">
               <Link
                 href="/book"
                 className="rounded-xl bg-[#f3b63c] px-6 sm:px-8 py-3 sm:py-4 font-semibold text-white transition hover:bg-amber-600">
-                Book Your Free Trial Class →
-              </Link>
-
-              <Link
-                href="/courses"
-                className="rounded-xl border border-[#f3b63c] px-6 sm:px-8 py-3 sm:py-4 font-semibold text-white transition hover:bg-white/10">
-                Explore Courses
+                Reserve My Free Trial →
               </Link>
             </div>
 

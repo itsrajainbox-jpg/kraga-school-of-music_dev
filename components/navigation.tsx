@@ -193,7 +193,19 @@ export function Navigation() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href="https://wa.me/918807838099"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1da851]">
+              WhatsApp
+            </a>
+            <a
+              href="tel:+918807838099"
+              className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20">
+              Call Now
+            </a>
             <motion.div
               whileHover={{
                 scale: 1.05,
@@ -308,19 +320,33 @@ export function Navigation() {
                     ))}
                   </AnimatePresence>
 
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
-                    className="pt-4">
-                    <Button
-                      asChild
-                      className="w-full bg-[#f3b63c] hover:bg-amber-600 text-white rounded-full">
-                      <Link href="/book" onClick={() => setIsOpen(false)}>
-                        Book Free Trial Class
-                      </Link>
-                    </Button>
-                  </motion.div>
+                  <div className="flex flex-col gap-3">
+                    <a
+                      href="https://wa.me/918807838099"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex w-full items-center justify-center rounded-full bg-[#25D366] py-3 text-sm font-semibold text-white transition hover:bg-[#1da851]">
+                      WhatsApp
+                    </a>
+                    <a
+                      href="tel:+918807838099"
+                      className="flex w-full items-center justify-center rounded-full bg-slate-900 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+                      Call Now
+                    </a>
+
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6 }}>
+                      <Button
+                        asChild
+                        className="w-full bg-[#f3b63c] hover:bg-amber-600 text-white rounded-full">
+                        <Link href="/book" onClick={() => setIsOpen(false)}>
+                          Book Free Trial Class
+                        </Link>
+                      </Button>
+                    </motion.div>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
