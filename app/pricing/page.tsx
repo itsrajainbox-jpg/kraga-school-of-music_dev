@@ -248,12 +248,12 @@ export default function PricingPage() {
                     {plan.prices[0].duration}
                   </div>
                   <div className="mt-1 text-3xl font-bold text-[#102246]">
-                    {plan.prices[0].amount}
-                  </div>
-                  <div className="mt-1 text-sm font-medium text-[#6b7280]">
                     {currency}
                     {perClass}
-                    {" per class"}
+                    <span className="text-base font-medium text-[#6b7280]"> per class</span>
+                  </div>
+                  <div className="mt-1 text-sm text-[#6b7280]">
+                    {sessions} sessions · {plan.prices[0].amount} total
                   </div>
                 </div>
 
