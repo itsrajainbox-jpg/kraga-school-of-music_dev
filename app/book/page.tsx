@@ -21,7 +21,7 @@ export default function BookPage() {
         </h1>
 
         <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          No commitment. No payment required. Just 30 minutes with one of our
+          No payment. No commitment. Just 30 minutes with one of our
           instructors.
         </p>
       </div>
@@ -40,7 +40,7 @@ export default function BookPage() {
         </p>
 
         <a
-          href="https://wa.me/YOUR_WHATSAPP_NUMBER"
+          href="https://wa.me/918807838099"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-3 inline-block text-primary font-medium hover:underline"

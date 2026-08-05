@@ -41,14 +41,11 @@ export function BookingForm() {
 
   const [formData, setFormData] = useState({
     fullName: "",
-    age: "",
-    gender: "",
-    instrument: "",
-
     email: "",
     phone: "",
+    bookingFor: "",
+    instrument: "",
     country: "",
-    message: "",
   });
 
   useEffect(() => {
@@ -487,69 +484,47 @@ export function BookingForm() {
             />
           </div>
 
-          {/* Age + Gender */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label className="text-sm font-medium">Age</Label>
+          {/* Booking For */}
+          <div className="space-y-3">
+            <Label className="text-sm font-medium">
+              Who is this trial for?
+            </Label>
 
-              <Input
-                type="number"
-                required
-                placeholder="Enter age"
-                value={formData.age}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    age: e.target.value,
-                  })
+            <div className="grid grid-cols-2 gap-4">
+              <button
+                type="button"
+                onClick={() =>
+                  setFormData({ ...formData, bookingFor: "self" })
                 }
-                className="
-          h-12
-          rounded-2xl
-          border-border/50
-          bg-background/50
-          focus-visible:ring-gold
-        "
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label className="text-sm font-medium">Gender</Label>
-
-              <Select
-                onValueChange={(value) =>
-                  setFormData({
-                    ...formData,
-                    gender: value,
-                  })
-                }
+                className={`h-12 rounded-2xl border transition-all font-medium ${
+                  formData.bookingFor === "self"
+                    ? "bg-gold text-black border-gold"
+                    : "border-border/50 bg-background/50 hover:border-gold"
+                }`}
               >
-                <SelectTrigger
-                  className="
-            h-12
-            rounded-2xl
-            border-border/50
-            bg-background/50
-          "
-                >
-                  <SelectValue placeholder="Select gender" />
-                </SelectTrigger>
+                Myself
+              </button>
 
-                <SelectContent className="rounded-2xl">
-                  <SelectItem value="male">Male</SelectItem>
-
-                  <SelectItem value="female">Female</SelectItem>
-
-                  <SelectItem value="other">Other</SelectItem>
-                </SelectContent>
-              </Select>
+              <button
+                type="button"
+                onClick={() =>
+                  setFormData({ ...formData, bookingFor: "child" })
+                }
+                className={`h-12 rounded-2xl border transition-all font-medium ${
+                  formData.bookingFor === "child"
+                    ? "bg-gold text-black border-gold"
+                    : "border-border/50 bg-background/50 hover:border-gold"
+                }`}
+              >
+                My child
+              </button>
             </div>
           </div>
 
           {/* Instrument */}
           <div className="space-y-3">
             <Label className="text-sm font-medium">
-              Do you have an instrument?
+              Do you have a piano or keyboard at home?
             </Label>
 
             <div className="grid grid-cols-2 gap-4">
@@ -603,33 +578,6 @@ export function BookingForm() {
             </div>
           </div>
 
-          {/* Message */}
-          <div className="space-y-2">
-            <Label className="text-sm font-medium">Message</Label>
-
-            <Textarea
-              placeholder="Tell us about your musical interests, goals, or any questions..."
-              value={formData.message}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  message: e.target.value,
-                })
-              }
-              className="
-      min-h-34
-      rounded-3xl
-      border-border/50
-      bg-background/50
-      resize-none
-      p-4
-      text-sm
-      leading-6
-      focus-visible:ring-gold
-    "
-            />
-          </div>
-
           {/* Submit */}
           <Button
             type="submit"
@@ -639,9 +587,7 @@ export function BookingForm() {
               !formData.fullName ||
               !formData.email ||
               !formData.phone ||
-              !formData.age ||
-              !formData.gender ||
-              !formData.instrument
+              !formData.bookingFor
             }
             className="
       w-full
