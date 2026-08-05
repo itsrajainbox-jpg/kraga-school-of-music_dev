@@ -205,18 +205,23 @@ export default function PricingPage() {
           ))}
         </div>
 
-        {/* 1 x 4 Pricing Cards */}
-        <div className="mt-16 grid gap-6 xl:grid-cols-2">
+        {/* 1 x 2 Pricing Cards */}
+        <div className="mx-auto mt-16 max-w-5xl grid gap-6 xl:grid-cols-2">
           {visiblePlans.map((plan, index) => {
             const Icon = plan.icon;
+            const raw = plan.prices[0].amount.replace(/[^0-9]/g, "");
+            const numeric = Number(raw.replace(/,/g, ""));
+            const sessions = plan.title.includes("24") ? 24 : 48;
+            const perClass = (numeric / sessions).toFixed(2);
+            const currency = plan.prices[0].amount.includes("$") ? "$" : "₹";
 
             return (
               <div
                 key={index}
-                className={`relative flex h-full flex-col rounded-[30px] border bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl ${
+                className={`relative flex flex-col rounded-[24px] border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl ${
                   plan.badge
                     ? "border-[#f3b63c] ring-1 ring-[#f3b63c]/20"
-                    : "border-[#eadfce]"
+                    : "border-slate-200"
                 }`}
               >
                 {plan.badge && (
@@ -225,54 +230,51 @@ export default function PricingPage() {
                   </div>
                 )}
 
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#f4ebd9] text-[#f3b63c]">
-                  <Icon className="h-8 w-8" />
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#f4ebd9] text-[#f3b63c]">
+                  <Icon className="h-7 w-7" />
                 </div>
 
-                <div className="mt-5 text-center">
-                  <div className="text-sm font-semibold uppercase tracking-[0.2em] text-[#f3b63c]">
+                <div className="mt-4 text-center">
+                  <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[#f3b63c]">
                     {plan.region}
                   </div>
-
-                  <h3 className="mt-2 font-serif text-3xl font-semibold text-[#1d2747]">
+                  <h3 className="mt-1 font-serif text-2xl font-semibold text-[#1d2747]">
                     {plan.title}
                   </h3>
                 </div>
 
-                <div className="mt-6 rounded-2xl bg-[#f8f4ee] p-5">
-                  <div className="space-y-5">
-                    {plan.prices.map((item, idx) => (
-                      <div key={idx}>
-                        <div className="text-sm text-[#59667f]">
-                          {item.duration}
-                        </div>
-
-                        <div className="mt-1 text-3xl font-bold text-[#102246]">
-                          {item.amount}
-                        </div>
-                      </div>
-                    ))}
+                <div className="mt-5 rounded-2xl bg-[#f8f4ee] p-5">
+                  <div className="text-sm text-[#59667f]">
+                    {plan.prices[0].duration}
+                  </div>
+                  <div className="mt-1 text-3xl font-bold text-[#102246]">
+                    {plan.prices[0].amount}
+                  </div>
+                  <div className="mt-1 text-sm font-medium text-[#6b7280]">
+                    {currency}
+                    {perClass}
+                    {" per class"}
                   </div>
                 </div>
 
-                <div className="mt-6 flex-1 space-y-4">
-                  {plan.features.map((feature, idx) => (
+                <div className="mt-6 flex-1 space-y-3">
+                  {plan.features.slice(0, 4).map((feature, idx) => (
                     <div key={idx} className="flex gap-3">
                       <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#5a8a42]" />
-                      <span className="text-[#45516c]">{feature}</span>
+                      <span className="text-sm text-[#45516c]">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 <Link
                   href="/book"
-                  className="mt-8 flex items-center justify-center gap-2 rounded-xl bg-[#102246] px-6 py-4 font-semibold text-[#f3b63c] transition hover:brightness-110"
+                  className="mt-6 flex items-center justify-center gap-2 rounded-xl bg-[#102246] px-6 py-3.5 font-semibold text-[#f3b63c] transition hover:brightness-110"
                 >
                   Book Free Trial Class
                   <ArrowRight className="h-5 w-5" />
                 </Link>
 
-                <div className="mt-4 flex items-center justify-center gap-2 text-xs text-[#6b7280]">
+                <div className="mt-3 flex items-center justify-center gap-2 text-xs text-[#6b7280]">
                   <ShieldCheck className="h-4 w-4 text-[#5a8a42]" />
                   No hidden fees
                 </div>
